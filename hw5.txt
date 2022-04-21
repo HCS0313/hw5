@@ -3,9 +3,9 @@ String gender = "";
 String birthday = "";
 String ID = "";
 String check = "";
+String loop = "1";
 
 do{
-    do{
         Console.WriteLine("請輸入姓名:");
         name = Console.ReadLine();
         Console.WriteLine("請輸入性別(男/女):");
@@ -14,7 +14,8 @@ do{
         birthday = Console.ReadLine();
         Console.WriteLine("請輸入學號:");
         ID = Console.ReadLine();
-
+        
+    do{
         Console.WriteLine(" "); //加一行空格
         Console.WriteLine("姓名:" + name);
         Console.WriteLine("性別:" + gender);
@@ -22,10 +23,23 @@ do{
         Console.WriteLine("學號:" + ID);
         Console.WriteLine("請確認資料是否正確, 正確輸入1, 錯誤輸入2");
         check = Console.ReadLine();
-    }
-    while(check == "2");
 
-    Console.WriteLine("已完成資料建置");
+        if (check == "1")
+        {
+            Console.WriteLine("已完成資料建置。");
+            loop = "2";
+        }
+        else if (check == "2")
+        {
+            Console.WriteLine("請重新填寫!");
+            loop = "1";
+        }
+        else
+        {
+            loop = "3";
+        }
+    }
+    while(loop == "3");
 }
-while(check == "1");
+while(loop == "1");
 
